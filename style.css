@@ -9,9 +9,14 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1f2937;
-  line-height: 1.6;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #27292e 0%, #28334c 50%, #142c3a 100%);
+  background-repeat: no-repeat;
+  background-attachment: scroll; 
+  color: #f8fafc;
+  scroll-behavior: smooth;
 }
 
 
@@ -30,9 +35,8 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 0.15px solid #0284c7 ;
 }
 
 .nav-wrap {
@@ -58,35 +62,35 @@ a {
 }
 
 .nav-link {
-  color: #374151;
   font-weight: 600;
   position: relative;
   text-decoration: none;
   font-weight: 700;
   transition: color 0.3s;
+   color: whitesmoke;
+   
 }
 .nav-link:hover{
   color:#0066ff;
 }
 .btn-link {
   padding: 10px 16px;
-  background: #2563eb;
-  color: #fff;
+   background: whitesmoke;
+   color: #418db6; 
   border-radius: 10px;
-  box-shadow: whitesmoke 0px 2px 4px 5px;
   transition: color 0.3s;
 }
 .btn-link:hover{
   transform: translateY(-2px);
-  background-color: #fff;
-  color: #0066ff;
+  background-color:#418db6;
+  color:whitesmoke;
 }
 .menu-icon{
   display: none;
 }
 .hero {
   padding: 80px 0;
-  background: linear-gradient(135deg, #eff6ff, #ffffff);
+
 }
   
 .hero-grid {
@@ -98,23 +102,41 @@ a {
 
 .tag {
   display: inline-block;
-  background: #dbeafe;
-  color: #1d4ed8;
+  color: #184fe8;
   padding: 8px 14px;
+  border: solid  0.5px #0284c7;
   border-radius: 999px;
   margin-bottom: 16px;
   font-weight: 700;
+  background: transparent;
+  backdrop-filter: calc(10px blur);
+  /* Animation properties */
+  animation: floatTransform 3s infinite ease-in-out;
 }
 
+@keyframes floatTransform {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px); /* Automatic 6px upar shift hoga */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .hero h1 {
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.1;
   margin-bottom: 16px;
+  color: #ffffff;
+  letter-spacing: -0.05em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
 .subtitle {
   font-size: 1.05rem;
-  color: #4b5563;
+   color: #cbd5e1; /* Smooth grey-white text readability behtar karne ke liye */
+  line-height: 1.6;
   margin-bottom: 24px;
 }
 
@@ -130,38 +152,56 @@ a {
   font-weight: 700;
   
 }
-
-.primary {
-  background: #2563eb;
-  color: #fff;
-  box-shadow: navy 2px 4px 5px;
-  transition: 0.3s;
- }
- .primary:hover{
-  transform: translateY(-2px);
-    color: #0066ff;
-  background-color: whitesmoke;}  
-
-
-.secondary {
-  border: 1px solid #cbd5e1;
-  background: #fff;
- box-shadow:  2px 4px 6px;
-  transition: 0.3s;
- }
- .secondary:hover{
-  transform: translateY(-2px);
+.primary{
+   background: #046092 !important;
   color: whitesmoke;
-   background: #2563eb;}
+  border: solid 0.5px #0284c7;
+}
+.secondary{
+  background-color: whitesmoke !important;
+  color:#2e576d ;
+  border: solid 1px rgb(86, 84, 84);
+}
+.primary,.secondary {
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 10px 24px !important;
+  transition: all 0.2s ease !important;
+ }
+  .primary:hover{
+      background: #418db6 !important; /* Hover par rich navy tone */
+  transform: scale(1.02); 
+  }
+ .secondary:hover{
+   color: #418db6;
+  background:rgb(224, 221, 221) !important; /* Hover par rich navy tone */
+  transform: scale(1.02); 
+ }
 
 .hero-card,
 .card {
-  background: #f3eeee;
   border-radius: 18px;
   box-shadow: black 2px 3px 3px;
-    background: #dbeafe;
+   background: rgba(30, 41, 59, 0.7) !important; /* Semi-transparent dark background */
+  backdrop-filter: blur(12px); /* Premium Glassmorphism blur effect */
+  -webkit-backdrop-filter: blur(12px);
+  
+  border: 1px solid rgba(56, 189, 248, 0.15) !important; /* Halka sa sky blue border line */
+  border-radius: 16px !important; /* Rounded corners stylish look ke liye */
+  padding: 24px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important; /* Soft card shadow */
+  transition: all 0.3s ease-in-out !important;
 }
-
+.card:hover{
+   transform: translateY(-5px); /* Card halka sa upar uthega */
+  border-color: #38bdf8 !important; /* Border sky blue highlight ho jayega */
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15) !important; /* Soft sky blue glow */
+}
+.hero-card:hover{
+ transform: translateY(-5px); /* Card halka sa upar uthega */
+  border-color: #38bdf8 !important; /* Border sky blue highlight ho jayega */
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15) !important; /* Soft sky blue glow */
+}
 .hero-card {
   padding: 32px;
 }
@@ -169,11 +209,6 @@ a {
 .section {
   padding: 70px 0;
 }
-
-.alt {
-  background: #fff;
-}
-
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -187,27 +222,27 @@ a {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 12px;
-}
+  color: #0699d8; /* Pure white ke bajaye stylish sky blue color sections ke naam par */
+  font-weight: 700;
+  border-left: 4px solid #0699d8; /* Side par ek aesthetic line bar */
+  padding-left: 12px;
+  margin-bottom: 20px;
 
-.contact {
-  background: #eff6ff;
 }
  .container button{
-  height: 35px;
-  width: 60px;
-  border-color:   navy;
+  height: 40px;
+  width: 80px;
   border: none;
-  border-radius: 3px;
-  background-color: #2563eb;
+  border-radius: 8px;
+  background-color :#046092;
   color:whitesmoke;
   font-weight: bold;
-  box-shadow: navy 0px 2px 3px;
   transition: 0.3s;
  }
  .container button:hover{
   transform: translateY(-2px);
-  background-color: navy;
- }
+  background-color:#418db6;
+ } 
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -217,7 +252,8 @@ a {
     position: absolute;
     top: 70px;
     left: 4%;
-    width: 92%;
+    margin-left: 50px;
+    width: 85%;
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
@@ -230,9 +266,13 @@ a {
 
   .nav.show {
     display: flex;
+      background: 
+      linear-gradient(180deg, #27292e 0%, #28334c 50%, #142c3a 100%);
   }
     .menu-icon{
       display: block;
+      cursor: default;
+      font-size: large;
     }
   .btn-link {
     text-align: center;
