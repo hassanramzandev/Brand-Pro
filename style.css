@@ -104,8 +104,9 @@ body{
 .subtitle{
     font-size:14px;
     color:#ddd;
-    line-height:1.7;
+    line-height:1.4;
     margin-bottom:30px;
+    margin-top: 13px;
 }
 
 .hero-actions{
