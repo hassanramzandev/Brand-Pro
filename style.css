@@ -260,7 +260,9 @@ button a{
 }
 
 @media(max-width:768px){
-
+ .hero{
+    margin-top: 70px;
+ }
 .hero h1{
     font-size:32px;
 }
